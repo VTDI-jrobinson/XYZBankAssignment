@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <vector>
+#include "Transaction.h"
 
 using namespace std;
 
@@ -8,6 +10,7 @@ class Account
 {
 private:
 	double balance;
+	vector<Transaction> log;
 
 public:
 
@@ -22,6 +25,8 @@ public:
 	bool deposit(double amount);
 
 	bool withdraw(double amount);
+
+	vector<std::string> report();
 
 
 };

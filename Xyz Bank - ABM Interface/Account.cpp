@@ -45,4 +45,14 @@ bool Account::withdraw(double amount)
 	return true;
 }
 
+vector<std::string> Account::report()
+{
+	for(int count=0; count < log.size(); count++)
+	{
+		std::cout << "Transaction: " << log[count].getType() << "\nAmount: " << log[count].getAmount();
+	}
+	
+	return vector<std::string>();
+}
+
 

@@ -1,4 +1,7 @@
-﻿  Transaction.cpp
+﻿  Account.cpp
+  Accounttypes.cpp
+C:\Users\Jamoi\Documents\GIT\XYZProject\XYZBankAssignment\Xyz Bank - ABM Interface\Accounttypes.h(15,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Transaction.cpp
   Xyz Bank - ABM Interface.cpp
 C:\Users\Jamoi\Documents\GIT\XYZProject\XYZBankAssignment\Xyz Bank - ABM Interface\Accounttypes.h(15,21): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\Jamoi\Documents\GIT\XYZProject\XYZBankAssignment\Xyz Bank - ABM Interface\Xyz Bank - ABM Interface.cpp(163,48): warning C4305: 'argument': truncation from 'double' to 'float'

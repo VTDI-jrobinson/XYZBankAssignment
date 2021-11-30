@@ -8,5 +8,8 @@ private:
 public:
 	Transaction(double amt, std::string kind);
 	std::string Report();
+	std::string	getType();
+	double getAmount();
+	
 
 };
