@@ -142,12 +142,14 @@
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="Accounttypes.cpp" />
     <ClCompile Include="Password.cpp" />
+    <ClCompile Include="Transaction.cpp" />
     <ClCompile Include="Xyz Bank - ABM Interface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
     <ClInclude Include="Accounttypes.h" />
     <ClInclude Include="Password.h" />
+    <ClInclude Include="Transaction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
