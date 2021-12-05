@@ -3,12 +3,13 @@
 #include <string>
 #include <vector>
 #include "Transaction.h"
+#include <fstream>
 
 using namespace std;
 
 class Account
 {
-private:
+protected:
 	double balance;
 	vector<Transaction> log;
 
@@ -27,6 +28,10 @@ public:
 	bool withdraw(double amount);
 
 	vector<std::string> report();
+
+	void addLog(Transaction transaction);
+
+	
 
 
 };

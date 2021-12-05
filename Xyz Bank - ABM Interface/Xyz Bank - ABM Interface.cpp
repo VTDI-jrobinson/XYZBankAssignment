@@ -21,6 +21,7 @@ CL_password gpass;
 int G_selection = 1;
 int AC_selection = 1;
 double G_withdrawal = 0, G_deposit = 0;
+Transaction obj = Transaction(0.00, "");
 
 
 
@@ -65,6 +66,7 @@ void atmSelectopSavings(SavingsAccount &x)//Manipulate Accounts using a switch s
 		system("pause");
 		system("cls");
 
+
 		break;
 		
 	case 2:
@@ -76,7 +78,9 @@ void atmSelectopSavings(SavingsAccount &x)//Manipulate Accounts using a switch s
 		}
 		else
 		{
-			cout << "\nYour Balance after Debit is: USD $" << x.getbalance() << endl << endl;
+			cout << "\nYour Balance after Debit is: USD $" << x.getbalance() << endl << endl; 
+			obj = Transaction(G_withdrawal, "Withdrawal");
+			x.addLog(obj);
 		}
 		system("pause");
 		system("cls");
@@ -88,14 +92,18 @@ void atmSelectopSavings(SavingsAccount &x)//Manipulate Accounts using a switch s
 		cin >> G_deposit;
 		x.deposit(G_deposit);
 		cout << "\nYour Balance after Credit is: $" << x.getbalance() << endl << endl;
+		obj = Transaction(G_deposit, "Deposit");
+		x.addLog(obj);
 
 		system("pause");
 		system("cls");
-
+		
+		
 		break;
 
 	case 4:
-		cout << "\nTHANK YOU FOR USING XYZ BANK" << endl;
+		x.report();
+		cout << "\n\n\nTHANK YOU FOR USING XYZ BANK" << endl;
 		system("pause");
 		system("cls");
 
@@ -110,6 +118,7 @@ void atmSelectopChequing(CheckingAccount &x)//Manipulate Accounts using a switch
 	{
 	case 1:
 		cout << "\nYour Bal is: USD $" << x.getbalance() << endl << endl;
+
 		
 
 		system("pause");
@@ -129,6 +138,9 @@ void atmSelectopChequing(CheckingAccount &x)//Manipulate Accounts using a switch
 			cout << "\nYour Balance after Debit is: USD $" << x.getbalance() << endl << endl;
 			
 			cout << "\nFee charged is USD 107.00\n";
+			obj = Transaction(G_withdrawal, "Withdrawal");
+			x.addLog(obj);
+
 		}
 		system("pause");
 		system("cls");
@@ -141,6 +153,8 @@ void atmSelectopChequing(CheckingAccount &x)//Manipulate Accounts using a switch
 		x.deposit(G_deposit);
 		cout << "\nYour Balance after Credit is: $" << x.getbalance() << endl << endl;
 		cout << "Transaction Fee: USD $" << x.transactionFee << endl;
+		obj = Transaction(G_deposit, "Deposit");
+		x.addLog(obj);
 
 		system("pause");
 		system("cls");
@@ -148,6 +162,7 @@ void atmSelectopChequing(CheckingAccount &x)//Manipulate Accounts using a switch
 		break;
 
 	case 4:
+		x.report();
 		cout << "\nTHANK YOU FOR USING XYZ BANK" << endl;
 		system("pause");
 		system("cls");
@@ -166,7 +181,7 @@ int main()
 	
 	pass.header();
 	pass.userlogin();
-	pass.loadbar(2);
+	pass.loadbar(0);
 	displayACTypes();
 	acc.addInterest();
 

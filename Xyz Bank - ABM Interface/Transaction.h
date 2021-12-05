@@ -11,5 +11,6 @@ public:
 	std::string	getType();
 	double getAmount();
 	
+	
 
 };

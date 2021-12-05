@@ -47,12 +47,30 @@ bool Account::withdraw(double amount)
 
 vector<std::string> Account::report()
 {
+	std::cout << "*******Transaction Logs********" << std::endl;
 	for(int count=0; count < log.size(); count++)
 	{
-		std::cout << "Transaction: " << log[count].getType() << "\nAmount: " << log[count].getAmount();
+		std::cout << "\nEntry " << count + 1 << ":" << std::endl;
+		std::cout << "\nTransaction: " << log[count].getType() << "\nAmount: " << log[count].getAmount();
+		std::cout << "\n======================================\n";
 	}
+
+	ofstream myfile;
+	myfile.open("ACC.txt");
+	for (int count = 0; count < log.size(); count++)
+	{
+		myfile << "\nEntry " << count + 1 << ":" << std::endl;
+		myfile << "\nTransaction: " << log[count].getType() << "\nAmount: " << log[count].getAmount();
+		myfile << "\n======================================\n";
+	}
+	myfile.close();
 	
 	return vector<std::string>();
+}
+
+void Account::addLog(Transaction transaction)
+{
+	log.push_back(transaction);
 }
 
 

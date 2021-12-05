@@ -1,0 +1,18 @@
+
+Entry 1:
+
+Transaction: Withdrawal
+Amount: 123
+======================================
+
+Entry 2:
+
+Transaction: Withdrawal
+Amount: 442
+======================================
+
+Entry 3:
+
+Transaction: Deposit
+Amount: 123
+======================================
